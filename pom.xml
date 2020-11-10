@@ -53,7 +53,23 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+            <!--
+            This spring-boot-devtools helps to disable the caches and enable hot swapping so that developers will
+            always see the last changes. Good for development.
+            -->
+            <!-- https://mkyong.com/spring-boot/intellij-idea-spring-boot-template-reload-is-not-working/ -->
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
