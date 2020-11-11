@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sample Spring Boot App</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+
+<main role="main" class="container">
+    Welcome to RgxGen demo.
+
+    You can generate data using form below or with REST API (see details below).
+
+    <form name="form-generate" th:action="@{/user/generate}" method="get">
+        <fieldset>
+            <legend>Fill fields to generate text</legend>
+            <label for="pattern">Pattern</label>
+            <input type="text" id="pattern" name="pattern"/><br>
+
+            <label for="amount">Number of records</label>
+            <input type="range" min="1" max="1000" value="50" class="slider" id="amount"/><br>
+            <p>Value: <span id="amount-value"></span></p>
+
+            <label for="unique">Unique</label>
+            <input type="checkbox" id="unique"><br>
+
+            <label for="matching">Matching</label>
+            <input type="checkbox" id="matching" checked="checked"><br>
+
+            <div class="form-actions">
+                <button type="submit" class="btn">Generate</button>
+            </div>
+        </fieldset>
+    </form>
+</main>
+<!-- /.container -->
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/slider.js}"></script>
+</body>
+</html>
