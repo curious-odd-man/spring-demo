@@ -18,7 +18,7 @@
 
     You can generate data using form below or with REST API (see details below).
 
-    <form name="form-generate" th:action="@{/user/generate}" method="get">
+    <form name="form-generate" th:action="@{/user/generate}" target="_blank" method="get">
         <label for="pattern">Pattern</label>
         <input type="text" id="pattern" th:name="pattern"/><br>
 
@@ -32,14 +32,14 @@
         <label for="matching">Matching</label>
         <input type="checkbox" id="matching" checked="checked" th:name="is-matching"><br>
 
-        <div class="form-actions">
-            <button type="submit" class="btn">Generate</button>
+        <div class="form-actions" >
+            <button type="submit" class="btn" >Generate</button>
         </div>
     </form>
 </main>
 <!-- /.container -->
 
 <script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/slider.js}"></script>
+<script type="text/javascript" th:src="@{/userHome.js}"></script>
 </body>
 </html>
