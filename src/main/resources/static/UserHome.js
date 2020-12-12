@@ -20,3 +20,4 @@ uniqueCheckBox.oninput = function () {
         matchingCheckBox.checked = matchingCheckboxValue
     }
 }
+

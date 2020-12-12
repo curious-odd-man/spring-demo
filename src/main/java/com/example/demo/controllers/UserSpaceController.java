@@ -5,18 +5,27 @@ import com.github.curiousoddman.rgxgen.RgxGen;
 import com.github.curiousoddman.rgxgen.iterators.StringIterator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.function.Supplier;
 
 @Controller
 public class UserSpaceController {
     Logger logger = LogManager.getLogger(UserSpaceController.class);
+
+    @RequestMapping("user")
+    public Map<String, Object> user(@AuthenticationPrincipal OAuth2User principal) {
+        logger.info("Received user info:{}", principal);
+        return Collections.singletonMap("name", principal.getAttribute("name"));
+    }
 
     @RequestMapping("/user/overview")
     public String userHome() {
